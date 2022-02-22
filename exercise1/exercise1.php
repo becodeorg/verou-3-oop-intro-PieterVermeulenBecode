@@ -1,25 +1,28 @@
 <?php
-// ini_set('display_errors', '1');
-// ini_set('display_startup_errors', '1');
-// error_reporting(E_ALL);
-declare(strict_types=1);
 
-class Beverage{
+declare(strict_types=1);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+class Beverage
+{
     public string $color;
     public float $price;
-    public string $temperature='cold';
+    public string $temperature;
 
-    function __construct($color,$price,$temperature){
+    public function __construct($color,$price,$temperature='cold')
+    {
         $this->color=$color;
         $this->price=$price;
         $this->temperature=$temperature;
     }
-    function getInfo(){
+    function getInfo()
+    {
         return "This beverage is ".$this->temperature." and ".$this->color."</br>";
     }
 }
 
-$cola=new Beverage("black",2,"cold");
+$cola=new Beverage("black",2);
 echo $cola->getInfo();
 echo $cola->temperature;
 /* EXERCISE 1
